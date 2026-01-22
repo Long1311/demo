@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi tiền tệ</title>
+  </head>
+  <body>
+    <h2>Chuyển đổi tiền tệ</h2>
+
+    <label>Số tiền:</label>
+    <input type="number" id="soTien" /><br /><br />
+
+    <label>Từ:</label>
+    <select id="tu">
+      <option value="1">VND</option>
+      <option value="26000">USD</option>
+    </select>
+
+    <label>Sang:</label>
+    <select id="sang">
+      <option value="1">VND</option>
+      <option value="26000">USD</option>
+    </select>
+
+    <br /><br />
+    <button onclick="convert()">Chuyển đổi</button> <br />
+    <br />
+
+    <input style="background-color: rgb(233, 235, 209)" id="result" readonly />
+
+    <script>
+      function convert() {
+        let soTien = document.getElementById("soTien").value;
+        let tu = document.getElementById("tu").value;
+        let sang = document.getElementById("sang").value;
+
+        let result = (soTien * tu) / sang;
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
