@@ -128,11 +128,11 @@
         let hoaHong = 0;
 
         if (doanhSo < 10000000) {
-            hoaHong = doanhSo * 0.05;
-        } else if (doanhSo < 50000000) {
             hoaHong = doanhSo * 0.10;
-        } else {
+        } else if (doanhSo < 30000000) {
             hoaHong = doanhSo * 0.15;
+        } else {
+            hoaHong = doanhSo * 0.20;
         }
 
         document.getElementById("kq6").innerText =
