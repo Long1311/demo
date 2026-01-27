@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Kiểm tra ngày trong tuần</h3>
+
+    <input type="number" id="ngay" placeholder="Nhập số từ 1 đến 7"> <br> <br>
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            let n = parseInt(document.getElementById("ngay").value);
+            let kq = "";
+
+            switch (n) {
+                case 1:
+                    kq = "Chủ nhật";
+                    break;
+                case 2:
+                    kq = "Thứ hai";
+                    break;
+                case 3:
+                    kq = "Thứ ba";
+                    break;
+                case 4:
+                    kq = "Thứ tư";
+                    break;
+                case 5:
+                    kq = "Thứ năm";
+                    break;
+                case 6:
+                    kq = "Thứ sáu";
+                    break;
+                case 7:
+                    kq = "Thứ bảy";
+                    break;
+                default:
+                    kq = "Không phải ngày trong tuần";
+            }
+
+            document.getElementById("ketqua").innerText = kq;
+        }
+    </script>
+</body>
+</html>

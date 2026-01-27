@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+        }
+</style>
+<body>
+    
+</body>
+<h2>Bài tập luyện tập cấu trúc điều kiện 01</h2>
+
+<div class="box">
+    <h3>Bài 1: Kiểm tra chia hết</h3>
+    <input type="number" id="a1" placeholder="Nhập a">
+    <input type="number" id="b1" placeholder="Nhập b">
+    <br>
+    <button onclick="bai1()">Kiểm tra</button>
+    <p id="kq1"></p>
+</div>
+
+<div class="box">
+    <h3>Bài 2: Điều kiện vào lớp 10</h3>
+    <input type="number" id="tuoi" placeholder="Nhập tuổi">
+    <br>
+    <button onclick="bai2()">Kiểm tra</button>
+    <p id="kq2"></p>
+</div>
+
+<div class="box">
+    <h3>Bài 4: Tìm số lớn nhất</h3>
+    <input type="number" id="a4" placeholder="Nhập số a">
+    <input type="number" id="b4" placeholder="Nhập số b">
+    <input type="number" id="c4" placeholder="Nhập số c">
+    <br>
+    <button onclick="bai4()">Tìm</button>
+    <p id="kq4"></p>
+</div>
+
+<div class="box">
+    <h3>Bài 5: Xếp loại học lực</h3>
+    <input type="number" id="kt" placeholder="Điểm kiểm tra">
+    <input type="number" id="gk" placeholder="Điểm giữa kỳ">
+    <input type="number" id="ck" placeholder="Điểm cuối kỳ">
+    <br>
+    <button onclick="bai5()">Xếp loại</button>
+    <p id="kq5"></p>
+</div>
+
+<div class="box">
+    <h3>Bài 6: Tính hoa hồng</h3>
+    <input type="number" id="doanhSo" placeholder="Nhập doanh số">
+    <br>
+    <button onclick="bai6()">Tính</button>
+    <p id="kq6"></p>
+</div>
+
+<script>
+    function bai1() {
+        let a = Number(document.getElementById("a1").value);
+        let b = Number(document.getElementById("b1").value);
+
+        if (b === 0) {
+            document.getElementById("kq1").innerText = "Không thể chia cho 0";
+        } else if (a % b === 0) {
+            document.getElementById("kq1").innerText = "a chia hết cho b";
+        } else {
+            document.getElementById("kq1").innerText = "a không chia hết cho b";
+        }
+    }
+
+    function bai2() {
+        let tuoi = Number(document.getElementById("tuoi").value);
+
+        if (tuoi >= 15) {
+            document.getElementById("kq2").innerText = "Đủ điều kiện vào lớp 10";
+        } else {
+            document.getElementById("kq2").innerText = "Không đủ điều kiện vào lớp 10";
+        }
+    }
+
+    function bai4() {
+        let a = Number(document.getElementById("a4").value);
+        let b = Number(document.getElementById("b4").value);
+        let c = Number(document.getElementById("c4").value);
+
+        let max = a;
+        if (b > max) max = b;
+        if (c > max) max = c;
+
+        document.getElementById("kq4").innerText = "Số lớn nhất là: " + max;
+    }
+
+    function bai5() {
+        let kt = Number(document.getElementById("kt").value);
+        let gk = Number(document.getElementById("gk").value);
+        let ck = Number(document.getElementById("ck").value);
+
+        let tb = (kt + gk + ck) / 3;
+        let kq = "";
+
+        if (tb >= 8) {
+            kq = "HSG";
+        } else if (tb >= 6.5) {
+            kq = "HSK";
+        } else if (tb >= 5) {
+            kq = "HSTB";
+        } else {
+            kq = "HS Yếu";
+        }
+
+        document.getElementById("kq5").innerText = kq;
+    }
+
+    function bai6() {
+        let doanhSo = Number(document.getElementById("doanhSo").value);
+        let hoaHong = 0;
+
+        if (doanhSo < 10000000) {
+            hoaHong = doanhSo * 0.05;
+        } else if (doanhSo < 50000000) {
+            hoaHong = doanhSo * 0.10;
+        } else {
+            hoaHong = doanhSo * 0.15;
+        }
+
+        document.getElementById("kq6").innerText =
+            "Hoa hồng nhận được: " + hoaHong + " VND";
+    }
+</script>
+
+</body>
+</html>
