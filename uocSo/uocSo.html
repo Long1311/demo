@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        
+    //tìm ước số của số nguyên dương n
+
+        /* 
+        let n = parseInt(prompt("Nhập n:"));
+
+        if (n <= 0 || isNaN(n)) {
+            alert("phải nhập số dương n");
+        } else {
+            document.write("Ước số của " + n + " là: ");
+            for (let i = 1; i <= n; i++) {
+                if (n % i === 0) {
+                    document.write(i + " ");
+                }
+            }
+        }
+        */
+
+    //kiểm tra n có phải số nguyên dương ko, sai nhập lại
+
+      let n;
+
+      while (true) {
+        n = Number(prompt("Nhập số nguyên dương n:"));
+
+        if (n > 0 && Number.isInteger(n)) {
+          break;
+        } else {
+          alert("Phải nhập số nguyên dương!");
+        }
+      }
+
+      alert("Bạn đã nhập đúng: n = " + n);
+    </script>
+  </body>
+</html>
