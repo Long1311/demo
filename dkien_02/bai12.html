@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let money = parseFloat(prompt("Số tiền ban đầu:"));
+      let months = parseInt(prompt("Số tháng vay:"));
+      let rate = parseFloat(prompt("Lãi suất %/tháng:")) / 100;
+
+      for (let i = 1; i <= months; i++) {
+        money += money * rate;
+      }
+
+      alert("Số tiền sau " + months + " tháng = " + money.toFixed(2));
+    </script>
+  </body>
+</html>
