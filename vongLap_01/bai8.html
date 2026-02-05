@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="choi()">Chơi</button>
+
+    <script>
+      function choi() {
+        let min = parseInt(prompt("Nhập số nhỏ nhất:"));
+        let max = parseInt(prompt("Nhập số lớn nhất:"));
+
+        let random = Math.floor(Math.random() * (max - min + 1)) + min;
+        let count = 0;
+
+        while (count < 3) {
+          let guess = parseInt(prompt("Nhập số bạn đoán:"));
+          count++;
+
+          if (guess === random) {
+            alert("Chúc mừng đã đoán đúng!");
+            return;
+          } else if (guess > random) {
+            alert("Số bạn đoán lớn hơn!");
+          } else {
+            alert("Số bạn đoán nhỏ hơn!");
+          }
+        }
+
+        alert("Đã hết lượt! Số đúng là: " + random);
+      }
+    </script>
+  </body>
+</html>
